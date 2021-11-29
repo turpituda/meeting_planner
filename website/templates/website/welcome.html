@@ -1,11 +1,13 @@
-{% extends "base.html" %}
-
-{% block title %}Welcome{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+</head>
+<body>
     <h1>Welcome to the meeting planner!</h1>
     <p>
-        This is my first <em>Django app</em>! :) Using Pycharm editor.
+        This is my first <em>Django app</em>! :)
     </p>
     <h2>Meetings</h2>
     <ul>
@@ -20,4 +22,5 @@
         {% endfor %}
     </ul>
     <a href="{% url 'rooms' %}">Rooms list</a>
-{% endblock %}
+</body>
+</html>

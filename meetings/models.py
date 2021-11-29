@@ -1,6 +1,17 @@
 from django.db import models
 from datetime import time
+
+
 # Create your models here.
+
+class Room(models.Model):
+    name = models.CharField(max_length=50)
+    floor_number = models.IntegerField(default=0)
+    room_number = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.name} room. Room number: {self.room_number} Floor: {self.floor_number}"
+
 
 class Meeting(models.Model):
     title = models.CharField(max_length=200)
@@ -11,11 +22,3 @@ class Meeting(models.Model):
 
     def __str__(self):
         return f"{self.title} at {self.start_time} on {self.date}"
-
-class Room(models.Model):
-    name = models.CharField(max_length=50)
-    floor_number = models.IntegerField(default=0)
-    room_number = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f"The meeting is hold in the {self.name} room.\nRoom number: {self.room_number} \nFloor: {self.floor_number}"
